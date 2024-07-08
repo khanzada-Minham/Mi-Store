@@ -240,15 +240,18 @@ function saveValue() {
 }
 
 let SearchProduct = document.getElementById('Search-product');
-SearchProduct.addEventListener('keyup', () => {
-  let NoItem = document.querySelector('.no-item');
-  if (NoItem) {
-    if (SearchProduct.value.trim() === '') {
-        NoItem.style.visibility = 'hidden';
-    } else {
-        NoItem.style.visibility = 'visible';
-    }
-  }
-});
+if(SearchProduct){
+    SearchProduct.addEventListener('keyup', () => {
+        let NoItem = document.querySelector('.no-item');
+        if (NoItem) {
+          if (SearchProduct.value.trim() === '') {
+              NoItem.style.visibility = 'hidden';
+          } else {
+              NoItem.style.visibility = 'visible';
+          }
+        }
+      });
+}
+
 
 

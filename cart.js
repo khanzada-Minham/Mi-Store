@@ -137,24 +137,39 @@ function localgetItem() {
         if (TotalPricesCartEnter) {
             TotalPricesCartEnter.innerHTML = `
             <div class="Discount-Style">
-            <input type="text" placeholder="Discount code of gift card" class="col-6 Discount-input">
-            <button type="button" class="btn btn-light">Apply</button>
+            <input type="text" placeholder="Discount code of gift card" class="col-5 Discount-input">
+            <button type="button" class="btn btn-light apply-btn col-2">Apply</button>
             </div>
         <div class="Discount-Style">
-        <samp>Subtotal</samp>
-        <samp>Rs.${total}</samp>
+        <samp class="col-5">Subtotal</samp>
+        <samp class="col-4">Rs.${total}</samp>
         </div>
         <div class="Discount-Style">
-            <samp>Shipping</samp>
-            <span>Rs 190.00</span>
+            <samp  class="col-5">Shipping<i class="fa-regular fa-circle-question question-mark" onclick="togglePopup()"></i>
+            
+            </samp>
+            <span class="col-4">Rs 190.00</span>
         </div>
         <div class="Discount-Style">
-            <samp class="total-price-add-shipping">Total</samp>
-            <span>Rs ${total + 190}</span>
+            <samp class="total-price-add-shipping col-5">Total</samp>
+            <span class="col-4">Rs ${total + 190}</span>
         </div>
             `
         }
 
+       let DiscountInputType =  document.querySelector('.Discount-input');
+    //    let questionMark = document.querySelector('.question-mark');
+    //    questionMark.addEventListener('click',()=>{
+    //     console.log('questionMark',questionMark);
+    //    })
+    let ApplyBtn = document.querySelector('.apply-btn');
+    if(ApplyBtn){
+        DiscountInputType.addEventListener('keyup',()=>{
+            ApplyBtn.style.color = 'white'
+            ApplyBtn.style.background = 'rgb(243, 116, 6)';
+       })
+    }
+            
       
         if (Footersummary) {
             Footersummary.innerHTML = `
@@ -273,29 +288,42 @@ function clearRadio() {
       uncheck.checked = false;
     })
  }
-CashOnDeliveryRadioButton.addEventListener('click',()=>{
+ if(CashOnDeliveryRadioButton){
+        CashOnDeliveryRadioButton.addEventListener('click',()=>{
         DebitFooter.style.display = 'none';
         BankDepositFooter.style.display = 'none';
         clearRadio()
         
 })
+ }
 
-DebitHearderRedio.addEventListener('click',()=>{
+if(DebitHearderRedio){
+        DebitHearderRedio.addEventListener('click',()=>{
         DebitFooter.style.display = 'block';
-
 })
-BankDepositRedioBtn.addEventListener('click',()=>{
-    BankDepositFooter.style.display = 'block';
-})
+}
+if(BankDepositRedioBtn){
+    BankDepositRedioBtn.addEventListener('click',()=>{
+        BankDepositFooter.style.display = 'block';
+    })
+}
 
-DifferentBillingRadio.addEventListener('click',()=>{
-    BillingFooter.style.display = 'block';
-   
-})
-shippingAddressInput.addEventListener('click',()=>{
-    BillingFooter.style.display = 'none';
-    clearRadio()
-})
+if(DifferentBillingRadio){
+    DifferentBillingRadio.addEventListener('click',()=>{
+        BillingFooter.style.display = 'block';
+       
+    })
+}
 
+if(shippingAddressInput){
+    shippingAddressInput.addEventListener('click',()=>{
+        BillingFooter.style.display = 'none';
+        clearRadio()
+    })
+}
 
-
+function togglePopup(){
+    // document.getElementById('popup-1').classList.toggle('active');
+    document.getElementById('popup-1').classList.toggle('active');
+    console.log('hello-toggle');
+}
