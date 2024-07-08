@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSSFile/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar-expand-sm bg-dark text-white-50 p-0" id="first">
+            <ul class="navbar-nav grid gap-5 px-5 py-0">
+                <i class="fa fa-solid fa-x" id="left"></i>
+                <li class="nav-item  h6 mb-0 ">Mi Pakistan</li>
+                <li class="nav-item  h6 mb-0 ">Mi Community</li>
+                <li class="nav-item  h6 mb-0 ">Support</li>
+                <li class="nav-item  h6 mb-0 ">Track My Order</li>
+                <li class="nav-item  h6 mb-0 ">WholeSale Query</li>
+                <li class="nav-item  h6 mb-0 ">Report Faulty Products</li>
+                <input type="text" placeholder="Search Product" id="Search-product" value="" onkeydown="saveValue()">
+                <div class="px-5 d-inline-flex gap-3 justify-content-end flex-grow-1 align-items-center p-0" id="ul">
+                    <i class="fa h-100 d-flex justify-content-center align-items-center fa-sharp fa-light fa-magnifying-glass f-10 p-1 position-relative" id="search-logo">
+                        <!-- /// -->
+                        <div class="container no-items" id="bag">
+                            
+                        </div>
+                        
+                        <div class=" no-item one">
+                            <div class="row">
+                        <div class="search-left col-3">
+                                <span class="popular">POPULAR SUGGESTIONS</span>
+                                <hr class="hrline">
+                                <div class="all-icons-svg">
+                                <!-- <div class="icons">
+                                    <i class="fa fa-solid fa-magnifying-glass"></i>
+                                    <span>Redmi a1</span>
+                                </div>
+                                <div class="icons">
+                                    <i class="fa fa-solid fa-magnifying-glass"></i>
+                                    <span>Redmi a2</span>
+                                </div>
+                                <div class="icons">
+                                    <i class="fa fa-solid fa-magnifying-glass"></i>
+                                    <span>air purifier</span>
+                                </div>
+                                <div class="icons">
+                                    <i class="fa fa-solid fa-magnifying-glass"></i>
+                                    <span>air buds</span>
+                                </div> -->
+                            </div>
+                                <div class="CATEGORIES">
+                                    <span>CATEGORIES</span>
+                                    <hr class="search-hr-line">
+                                </div>
+                                <div class="Air-Purifiers">
+                                    <span>Air Purifiers</span>
+                                </div>
+                                <div class="Air-Pages">
+                                    <span>PAGES</span>
+                                </div>
+                                <hr class="search-hr-line">
+                                <div class="icon-text">
+                                    <i class="fa fa-light fa-circle-exclamation"></i>
+                                    <span>Why Do You Need ...</span>
+                                </div>
+                                <div class="icon-text">
+                                    <i class="fa fa-light fa-circle-exclamation"></i>
+                                    <span>Xiaomi Air Purifier .....</span>
+                                </div>
+                                <div class="icon-text">
+                                    <i class="fa fa-light fa-circle-exclamation"></i>
+                                    <span>Mi Air Purifiers.....</span>
+                                </div>
+                                <div class="search-button">
+                                    <a href="/AllItem.html"><button class="btn btn-dark" type="button">VIEW ALL ITEMS</button></a>
+                                  </div>
+                                </div>
+                                
+                            <div class="right col-7 ">
+                                <div class="SCREACH-PRODUCTS">
+                                    <samp>PRODUCTS</samp>
+                                    <hr>
+                                </div>
+                                <div class="display-image-search">
+                                    <!-- <div class="" style="width: 10rem;">
+                                        <img src="/PicturesFiles/extra_arrivals/Arrivales-14.jpg" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                          <h5 class="card-title text-danger cart-prices">Rs.15000</h5>
+                                        </div>
+                                    </div> -->
+                                    
+                                </div>
+
+                            
+                            </div>
+                        </div>
+                        </div>
+                        <!-- /// -->
+                    </i>
+                    <i class="fa h-100 d-flex justify-content-center align-items-center fa-thin fa-user p-1"></i>
+                    <a href="/login.html" class="link-login-page"><i
+                            class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-heart p-1"></i></a>
+                    <i class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-bag-shopping p-3"
+                        id="shopping-bag">
+                        <div class="cartCount">0</div>
+                        <div class="no-items" id="bag">
+                            <div class="header mt-2"></div>
+                            <hr>
+                            <div class="footer"></div>
+                        </div>
+                    </i>
+                    <div class="overlay">
+                        <div class="card">
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+    </div>
+    </ul>
+    </nav>
+</div>
+
+<div class="container-fluid" id="newnev">
+    <div class="row">
+        <img src="logo/logofile.png" alt="" class=" col-1  float-end" id="logo">
+        <nav class="navbar-expand-sm text-dark-50 col-11 p-5">
+            <ul class="navbar-nav grid gap-5 px-5 p-2">
+                <li class="nav-item  h6 hover-effect" onmouseover="over('New Arrival')" onmouseout="out()"
+                    id="cadeList">New Arrivals</li>
+                <li class="nav-item  h6 hover-effect" onmouseover="over('Smartphones')" onmouseout="out()" id="">Smart
+                    Phone</li>
+                <li class="nav-item  h6 hover-effect" onmouseover="over('Power Bank')" onmouseout="out()" id="">Power
+                    Bank and Charging</li>
+                <li class="nav-item  h6 hover-effect" onmouseover="over('Gear & Devices')" onmouseout="out()">Gear &
+                    Devices</li>
+                <li class="nav-item  h6 hover-effect" onmousemove="over('Camera & Visual')" onmouseout="out()">Camera &
+                    Visual</li>
+                <li class="nav-item  h6 hover-effect" onmousemove="over('Audio')" onmouseout="out()">Audio</li>
+                <li class="nav-item  h6 hover-effect " onmousemove="over('Lifestyle')" onmouseout="out()">Lifestyle</li>
+                <li class="nav-item  h6 hover-effect" onmousemove="over('Details')" onmouseout="out()">Details</li>
+    </div>
+    <div id="categories" class="container">
+        <div class="container-fluid row" id="nick"></div>
+    </div>
+
+</div>
+<div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="/PicturesFiles/DisplayPicture/Redmi_Pad.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+            <img src="/PicturesFiles/DisplayPicture/note_13.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="PicturesFiles/DisplayPicture/Mi_TV_box.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="PicturesFiles/DisplayPicture/Redmi.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="PicturesFiles/DisplayPicture/Redmi_A3x_web.webp" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="PicturesFiles/DisplayPicture/poco_f6_pro_desktop.webp" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+<div class="container" id="list">
+    <div class="p-4 ps-4 position-relative m-80">
+        <ul class="d-inline-flex list-unstyled responsive-list">
+            <li>
+                <img src="PicturesFiles/DisplayPicture/Phoneicons.avif" class="col-4">
+                <!-- /Phoneicons.avif -->
+                <span id="span">Smart Phone</span>
+            </li>
+            <li>
+                <img src="PicturesFiles/DisplayPicture/website_icons_mobile-12.avif" class="col-4">
+                <!-- /website_icons_mobile-12.avif -->
+                <span id="span">Gear & DeviCes</span>
+            </li>
+            <li>
+                <img src="PicturesFiles/DisplayPicture/Audio.avif" class="col-4">
+                <!-- /Audio.avif -->
+                <span id="span">Audio</span>
+            </li>
+            <li>
+                <img src="PicturesFiles/DisplayPicture/Camera.avif" class="col-4">
+                <!-- /Camera.avif -->
+                <span id="span">Camera Visual</span>
+            </li>
+            <li>
+                <img src="PicturesFiles/DisplayPicture/Charger.avif" class="col-4">
+                <!-- /Charger.avif -->
+                <span id="span">PowerBank & Charging</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container " id="replaces">
+    <div class="row">
+        <img src="/PicturesFiles/NEWARRIVALS/replaces.jpg" alt="" class="p-4">
+
+    </div>
+</div>
+<div class="container" id="hover">
+    <div class="row">
+        <img src="/PicturesFiles/Hover/watch_4_tile_3.png" alt="" class="w-50 tra hover-effect col-6">
+        <img src="/PicturesFiles/Hover/powerbank_tile_1.png" alt="" class="w-50 text-center hover-effect col-6">
+    </div>
+    <br>
+    <div class="row">
+        <img src="/PicturesFiles/Hover/audio_desktop_tile.png" alt="" class="w-50 hover-effect col-6">
+        <img src="/PicturesFiles/Hover/Dual-mode_connection___Comfortable_grip_1.png" alt=""
+            class="w-25 p-1 hover-effect col-3">
+        <img src="/PicturesFiles/Hover/Camera_Aw200_Tile_Sale_2_Desktop_View_3.jpg" alt=""
+            class="w-25 p-1 hover-effect col-3 ">
+    </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<h3 class="text-center">NEW ARRIVALS</h3>
+
+<div class="slider-container">
+    <div class="slider">
+        <div class="slide"><img src="PicturesFiles/NEWARRIVALS/A3xwhite.jpg" alt="Image 1"></div>
+        <!-- NEWARRIVALS/A3xwhite.jpg -->
+        <div class="slide"><img src="PicturesFiles/NEWARRIVALS/GreenA3.jpg" alt="Image 2"></div>
+        <!-- NEWARRIVALS/GreenA3.jpg -->
+        <div class="slide"><img src="PicturesFiles/NEWARRIVALS/PocoF6Blackcopy.jpg" alt="Image 3"></div>
+        <!-- NEWARRIVALS/PocoF6Blackcopy.jpg -->
+        <div class="slide"><img src="PicturesFiles/NEWARRIVALS/PocoF6ProBlackproductimage.jpg" alt="Image 4"></div>
+        <!-- NEWARRIVALS/PocoF6ProBlackproductimage.jpg -->
+        <div class="slide"><img src="PicturesFiles/NEWARRIVALS/RedmiNote13Pro_5GSiilverXFFEdition.jpg" alt="Image 5">
+        </div>
+        <!-- NEWARRIVALS/RedmiNote13Pro_5GSiilverXFFEdition.jpg -->
+        <div class="slide"><img src="PicturesFiles/NEWARRIVALS/XaiomiPad6BlueColor.jpg" alt="Image 6"></div>
+        <!-- NEWARRIVALS/XaiomiPad6BlueColor.jpg -->
+        <div class="slide"><img src="PicturesFiles/NEWARRIVALS/XiaomiWatchS3.jpg" alt="Image 7"></div>
+        <!-- NEWARRIVALS/XiaomiWatchS3.jpg -->
+    </div>
+    <button class="nav-button prev">&#10094;</button>
+    <button class="nav-button next">&#10095;</button>
+</div>
+<br>
+<br>
+
+<br>
+<h2 class="text-center">TOP SELLER</h2>
+
+<div class="slider-container">
+    <div class="slider">
+        <div class="slide"><img src="PicturesFiles/TOPSELLER/XiaomiSmartBand8pro.jpg" alt="Image 1"></div>
+        <!-- TOP SELLER/XiaomiSmartBand8pro.jpg -->
+        <div class="slide"><img src="PicturesFiles/TOPSELLER/RedmiBuds5BProductImage.jpg" alt="Image 2"></div>
+        <!-- TOP SELLER/RedmiBuds5BProductImage.jpg -->
+        <div class="slide"><img src="PicturesFiles/TOPSELLER/RedmiBuds5ProProductImage1.jpg" alt="Image 3"></div>
+        <!-- TOP SELLER/RedmiBuds5ProProductImage1.jpg -->
+        <div class="slide"><img src="PicturesFiles/TOPSELLER/Redmiwatch4Prroductimage1_1.jpg" alt="Image 4"></div>
+        <!-- TOP SELLER/Redmiwatch4Prroductimage1_1.jpg -->
+        <!-- TOP SELLER/routerAC1200.jpg -->
+        <div class="slide"><img src="PicturesFiles/TOPSELLER/routerAC1200.jpg" alt="Image 5"></div>
+        <!-- TOP SELLER/XiaomiSmartBand8pro (1).jpg -->
+        <div class="slide"><img src="PicturesFiles/TOPSELLER/XiaomiSmartBand8pro (1).jpg" alt="Image 6"></div>
+        <!-- TOP SELLER/RedmiBuds4Lite-01.jpg -->
+        <div class="slide"><img src="PicturesFiles/TOPSELLER/RedmiBuds4Lite-01.jpg" alt="Image 7"></div>
+    </div>
+    <button class="nav-button prev">&#10094;</button>
+    <button class="nav-button next">&#10095;</button>
+</div>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="">
+
+                <img src="PicturesFiles/TOPSELLER/Redmi_futer.jpg" class="card-img-top hover-effect">
+                <br>
+
+                <br>
+                <div class="text h3 text-center">Redmi A3x Vs Redmi A3</div>
+                <p>Complete Comparsion of Redmi A3x Vs Redmi A3. Explore key differences in features, performance,
+                    and value to find the best budget smartphone for your needs</p>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex flex-column ">
+            <div class="mb-3">
+                <div class="">
+                    <img src="PicturesFiles/TOPSELLER/band_futer.jpg" class="card-img-top hover-effect">
+                </div>
+            </div>
+            <div>
+                <div class="">
+                    <img src="PicturesFiles/TOPSELLER/watch_futer.jpg" class="card-img-top hover-effect">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container col-6">
+    <button class="btn btn-dark hover-effect" id="Viewcen">View</button>
+    <button class="btn btn-dark float-end hover-effect" id="View">View</button>
+</div>
+
+<br>
+<br>
+<br>
+<h4 class="container">Mi Store</h4>
+<h4 class="container">Official Xiaomi Store in Pakistan – Your Retail Therapy!</h4>
+<p class="container">With the surge of online mobile shopping in Pakistan, Mistore.pk has become your one-stop shop
+    for all Xiaomi Products. As an official Xiaomi store, we provide all mi Smartphone and eco-products, including
+    those made by its subsidiaries Redmi and POCO. Being the business partners of Xiaomi Pakistan, we have the most
+    diverse range of authentic Xiaomi smart devices within the categories of Audio, Home Xiaomi Security Cameras,
+    Mobile phones, Smart Devices, Xiaomi/Redmi Power Bank, Charger & Cables, etc. In addition, we offer economical
+    and cheerful Xiaomi, POCO & Redmi mobiles with ultra-modern functionality.</p>
+<br>
+<h4 class="container">Enjoy the Xiaomi Sale's & Deals at Xiaomi Official Store - MiStore</h4>
+<p class="container">From leveling up your style game with Fitness Bands & Smart Watches, Earbuds, or Xiaomi
+    Smartphones to making
+    your home smarter than ever with Xiaomi 4K Projectors, Smart TV Boxes, Xiomi Gaming Monitors, Air Purifiers,
+    etc., we’ve got your back!😊</p>
+<div class="container-fluid ">
+    <div class="row ">
+        <img src="EndPicture/slice_1.png" alt="" class="col-4 hover-effect" id="red">
+        <img src="EndPicture/slice2_.png" alt="" class="col-4 hover-effect" id="orange">
+        <img src="EndPicture/slice3_.png" alt="" class="col-4 hover-effect" id="yellow">
+    </div>
+</div>
+<br>
+<div class="container-fluid email">
+    <div class="row">
+        <div class="col-3">
+            <h5 class="">Let's stay in touch</h5>
+            <p class="">Get updates on sales specials and more</p>
+        </div>
+
+        <div class="col-3 ">
+            <div class="form-floating ">
+                <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                <label for="floatingInputGrid">Email address</label>
+            </div>
+        </div>
+        <div class="col-2">
+            <h5>Follow Mi</h5>
+            <p>We want to hear from you!</p>
+        </div>
+        <div class="col-4">
+            <div class="icon text-end p-2 px-5">
+                <i class="fa fa-brands fa-facebook "></i>
+                <i class="fa fa-brands fa-youtube"></i>
+                <i class="fa fa-brands fa-instagram"></i>
+                <i class="fa fa-brands fa-x-twitter"></i>
+                <i class="fa fa-brands fa-tiktok"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid text-white-50" id="About">
+    <div class="row">
+        <div class="col-4">
+            <p class="d-inline-flex">About</p>
+            <i class="fa fa-duotone fa-circle-question"></i>
+        </div>
+        <div class="col-4">
+            <p class="d-inline-flex">FAQ's</p>
+            <i class="fa fa-thin fa-ban col-4 "></i>
+        </div>
+        <div class="col-4">
+            <p class="d-inline-flex">Need Help</p>
+            <i class="fa fa-regular fa-comment-dots"></i>
+        </div>
+    </div>
+</div>
+</div>
+<div class="footer">
+    <div class="container-fluid bg-dark text-white-50 ">
+        <div class="row">
+            <div class="col-2 navbar-expand-sm">
+                <h6>PRODUCTS</h6>
+                <br>
+                <p>All Products</p>
+                <p>Redmi Watch 4</p>
+                <p>Redmi Buds 5</p>
+                <p>redmi buds 5 pro</p>
+                <p>Mi Smart Speaker</p>
+                <p>Mi Wifi Range Extender</p>
+            </div>
+            <div class="col-2">
+                <h6>GET TO KNOW US</h6>
+                <br>
+                <p>Our Team</p>
+                <p>About Us</p>
+                <p>Terms & Conditions</p>
+                <p>Packing Process</p>
+                <p>Why Shop from Mistore.pk</p>
+                <p>Customer Reviews</p>
+            </div>
+            <div class="col-2">
+                <h6>AFTER SALE SERVICES</h6>
+                <br>
+                <p>Privacy Policy</p>
+                <p>Refund & Return Policy</p>
+                <p>Warranty & Repair Policy</p>
+                <p>Shipping & Cancellation Policy</p>
+                <p>Estimated Delivery Time</p>
+                <p>Secure Payment</p>
+                <p>User Guide</p>
+            </div>
+            <div class="col-2">
+                <h6>LET US HELP YOU</h6>
+                <br>
+                <p>How to Place Order</p>
+                <p>E-Gift Card</p>
+                <p>Claim Process</p>
+                <p>Product Authentication</p>
+                <p>Track Your Order</p>
+                <p>FAQ's</p>
+                <p>Blogs</p>
+                <p>Xiaomi Community</p>
+            </div>
+            <div class="col-4">
+                <h6>CUSTOMER CARE</h6>
+                <br>
+                <p>Support</p>
+                <p>Helpline Number : 03-111-111-050</p>
+                <p>info@mistore.pk</p>
+                <p>Service Timings 10am-6pm</p>
+                <br>
+                <h6>PAYMENT METHODS</h6>
+                <div class="img d-inline-flex none">
+                    <div class="">
+                        <img src="PicturesFiles/PaymentGetways/web_icons-02.png" alt="" class="">
+                    </div>
+                    <div>
+                        <img src="PicturesFiles/PaymentGetways/web_icons-03.png" alt="" class="">
+                    </div>
+                    <div>
+                        <img src="PicturesFiles/PaymentGetways/web_icons-04.png" alt="" class="">
+                    </div>
+                    <div>
+                        <img src="PicturesFiles/PaymentGetways/web_icons-05.png" alt="" class="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid position-fixed bottom-0 bg-white" id="mobile">
+    <div class="row justify-content-center">
+        <div class="col-2 d-flex flex-column gap-2 justify-content-center align-items-center bg-white">
+            <i class="fa fs-5 fa-solid fa-house "></i>
+            <span>Home</span>
+        </div>
+        <div class="col-2 d-flex flex-column gap-2 justify-content-center align-items-center">
+            <i class="fa fs-5 fa-brands fa-product-hunt "></i>
+            <span>Product</span>
+        </div>
+        <div class="col-3">
+            <img src="logo/logofile.png" alt="" class="top-2">
+        </div>
+        <div class="col-2 d-flex flex-column gap-2 justify-content-center justify-content-end align-items-center">
+            <i class="fa fs-5 fa-brands fa-discourse "></i>
+            <span>Discover</span>
+        </div>
+        <div class="col-2 d-flex flex-column gap-2 justify-content-center justify-content-end align-items-center">
+            <i class="fa fs-5 fa-thin fa-user "></i>
+            <span>Account</span>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/BootJavascript/bootstrap.js"></script>
+<script src="index.js"></script>
+<script src="script.js"></script>
+<script defer src="cart.js"></script>
+
+
+
+</html>

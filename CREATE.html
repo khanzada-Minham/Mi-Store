@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE</title>
+    <link rel="stylesheet" href="/CSSFile/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar-expand-sm bg-dark text-white-50 p-0" id="first">
+                <ul class="navbar-nav grid gap-5 px-5 py-0">
+                    <i class="fa fa-solid fa-x" id="left"></i>
+                    <li class="nav-item  h6 mb-0 ">Mi Pakistan</li>
+                    <li class="nav-item  h6 mb-0 ">Mi Community</li>
+                    <li class="nav-item  h6 mb-0 ">Support</li>
+                    <li class="nav-item  h6 mb-0 ">Track My Order</li>
+                    <li class="nav-item  h6 mb-0 ">WholeSale Query</li>
+                    <li class="nav-item  h6 mb-0 ">Report Faulty Products</li>
+                    <div class="px-5 d-inline-flex gap-3 justify-content-end flex-grow-1 align-items-center p-0"
+                        id="ul">
+                        <i
+                            class="fa h-100 d-flex justify-content-center align-items-center fa-sharp fa-light fa-magnifying-glass f-10 p-1"></i>
+                        <i class="fa h-100 d-flex justify-content-center align-items-center fa-thin fa-user p-1"></i>
+                        <i
+                            class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-heart p-1"></i>
+                        <i class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-bag-shopping p-3"
+                            id="shopping-bag">
+                            <div class="cartCount">0</div>
+                            <div class="no-items" id="bag">
+                                <div class="header mt-2"></div>
+                                <hr>
+                                <div class="footer"></div>
+                            </div>
+
+                        </i>
+                        <div class="overlay">
+                            <div class="card">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        </ul>
+        </nav>
+    </div>
+    </div>
+    <div class="container-fluid" id="newnev">
+        <div class="row">
+            <!-- <a href="index.html" id="home-page"> -->
+            <img src="logo/logofile.png" alt="" class=" col-1  float-end" id="logo">
+            <!-- </a> -->
+            <nav class="navbar-expand-sm text-dark-50 col-11 p-5">
+                <ul class="navbar-nav grid gap-5 px-5 p-2">
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('New Arrival')" onmouseout="out()"
+                        id="cadeList">New Arrivals</li>
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('Smartphones')" onmouseout="out()" id="">
+                        Smart
+                        Phone</li>
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('Power Bank')" onmouseout="out()" id="">
+                        Power
+                        Bank and Charging</li>
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('Gear & Devices')" onmouseout="out()">Gear &
+                        Devices</li>
+                    <li class="nav-item  h6 hover-effect" onmousemove="over('Camera & Visual')" onmouseout="out()">
+                        Camera &
+                        Visual</li>
+                    <li class="nav-item  h6 hover-effect" onmousemove="over('Audio')" onmouseout="out()">Audio</li>
+                    <li class="nav-item  h6 hover-effect " onmousemove="over('Lifestyle')" onmouseout="out()">Lifestyle
+                    </li>
+                    <li class="nav-item  h6 hover-effect" onmousemove="over('Details')" onmouseout="out()">Details</li>
+        </div>
+        <div id="categories" class="container">
+            <div class="container-fluid row" id="nick"></div>
+        </div>
+        <div class="container-fluid">
+            <div class="row div"></div>
+        </div>
+        <div class="prompt align-items-center">
+            <div class="prompt-img row  align-items-center">
+                <div class="col-2">
+                    <img src="" alt="" class="pro-img">
+                </div>
+                <div class="prompt-text col-8">
+                    <p>Is added to your shopping cart</p>
+                </div>
+            </div>
+            <div class="prompt-Action">
+                <a href="/index.html"> <button type="button" class="btn btn-danger btn-sm">Continue
+                        Shopping</button></a>
+                <button type="button" class="btn btn-danger btn-sm">Go To Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="Create-account-text">
+            <samp class="">Create Mi Account</samp>
+        </div>
+        <div class="creat-account-input">
+            <input class=" form-control w-50" type="text" placeholder="First Name">
+        </div>
+        <div class="creat-account-Lest-name">
+            <input class=" form-control w-50" type="text" placeholder="Lest Name">
+        </div>
+        <div class="creat-account-email">
+            <input class=" form-control w-50" type="text" placeholder="E-mail">
+        </div>
+        <div class="creat-account-password">
+            <input class=" form-control w-50" type="text" placeholder="Password">
+        </div>
+        <div class="d-grid gap-2 justify-content-center d-flex">
+            <button class="btn btn-outline-danger col-5" type="button">CREATE AN ACCOUNT</button>
+        </div>
+        <div class="sing-in">
+        <a href="/login.html" class="">Sing In</a>
+    </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

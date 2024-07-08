@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Page</title>
+    <link rel="stylesheet" href="/CSSFile/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="Form-Logo ">
+        <div class="col-3"></div>
+        <div class="col-5 form-Gap mx-5">
+        <a href="/index.html"><img src="PicturesFiles/form-Page-logo/form-logo.png" alt="" class="form-logo-img"></a>
+        </div>
+        <div class="col-3">
+            <a href="/cart.html" class="back-to-cart "><i class="fa fa-solid fa-bag-shopping"></i></a>
+        </div>
+    </div>
+    <hr>
+    <div class="container d-flex pb-5">
+        <div class="Form-left-part w-50">
+            <div class="Contact-login">
+                <h2 class="Contact">Contact</h2>
+                <a href="" class="login-form">Login</a>
+            </div>
+            <div class="Contact-Form  ">
+                <input type="text" placeholder="Email" class=" form-name-email w-100 email-form">
+                <input type="checkbox">
+                <sapn class="Email-text">Email me with news and offers</sapn>
+            </div>
+            <div class="Delivery-form">
+                <span class="Delivery-form-text">Delivery</span>
+            </div>
+            <div class="cityListWrap">
+                <select id="cityNameDropdown" class=" w-46">
+                    <option id="noSelectedOption" class="" value="0">Select Country Name</option>
+                    <option value="LAHORE">Pakistan</option>
+                </select>
+            </div>
+
+            <div class="First-Last-Names">
+                <input type="text" placeholder="First Name" class="form-control form-name">
+                <input type="text" placeholder="Last Name" class="form-control form-name">
+            </div>
+            <div class="address">
+                <input type="text" placeholder="Address" class="form-address">
+            </div>
+            <div class="form-city">
+                <input type="text" placeholder="City" class="form-name">
+                <input type="text" placeholder="Postal code" class="form-name">
+            </div>
+            <div class="form-number">
+                <input type="text" placeholder="Phone Number" class="form-address">
+            </div>
+            <div class="form-text-Sava-Information">
+                <input type="checkbox" class="checkbox-input">
+                <span class="Sava-Information">Save this information for next time</span>
+            </div>
+            <div class="Shipping-method">
+                <span class="">Shipping method</span>
+            </div>
+            <div class="alert alert-warning" id="alert">
+                <!-- <input type="radio" class="redio-timing-Days"> -->
+                <span class="Alert-text">
+                    Standard Delivery Time is 2 to 3 Working Days
+                </span>
+                <samp class="rupees-span">Rs.190.00</samp>
+            </div>
+            <div class="Payment">
+                <span class="Payment-heading">Payment</span>
+                <samp class="Payment-text">All transactions are secure and encrypted.</samp>
+            </div>
+            <div class="Debit-carts">
+                <div class="Debit-hearder d-flex">
+                    <span>
+                        <input type="radio" class="Debit-hearder-redio All-redio-btn">
+                        PAYFAST(Pay via Debit/Credit/Wallet/Bank Account)
+                    </span>
+                    <div class="Debit-picture">
+                        <img src="PicturesFiles/PaymentGetways/web_icons-02.png" class="Debit-img">
+                        <img src="PicturesFiles/PaymentGetways/web_icons-03.png" class="Debit-img">
+                        <img src="PicturesFiles/PaymentGetways/pngegg.png" class="Debit-img">
+                    </div>
+                </div>
+                <div class="Debit-footer">
+                    <div class="debit-footer-svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-252.3 356.1 163 80.9" class="eHdoK">
+                            <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"
+                                d="M-108.9 404.1v30c0 1.1-.9 2-2 2H-231c-1.1 0-2-.9-2-2v-75c0-1.1.9-2 2-2h120.1c1.1 0 2 .9 2 2v37m-124.1-29h124.1">
+                            </path>
+                            <circle cx="-227.8" cy="361.9" r="1.8" fill="currentColor"></circle>
+                            <circle cx="-222.2" cy="361.9" r="1.8" fill="currentColor"></circle>
+                            <circle cx="-216.6" cy="361.9" r="1.8" fill="currentColor"></circle>
+                            <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="2"
+                                d="M-128.7 400.1H-92m-3.6-4.1 4 4.1-4 4.1"></path>
+                        </svg>
+                    </div>
+                    <div class="Debit-footer-text">After clicking "Pay now", you will be redirected to PAYFAST(Pay via
+                        Debit/Credit/Wallet/Bank
+                        Account) to complete your purchase securely. Online payments confirmation can take one business
+                        day. All Debit / Credit cards are accepted
+                    </div>
+                </div>
+                <div class="CashOnDelivery">
+                    <input type="radio" class="CashOnDelivery-radio-button All-redio-btn">
+                    <span class="CashOnDelivery-Text">
+                        Cash on Delivery (COD)
+                    </span>
+                </div>
+                <div class="Bank-Deposit-text-redio">
+                    <div class="Bank-Deposit-Header">
+                        <input type="radio" class="Bank-Deposit-redio-btn All-redio-btn">
+                        <span>Bank Deposit</span>
+                    </div>
+                    <div class="Bank-Deposit-Footer">
+                        <span class="Bank-Deposit-Footer-text">
+                            <p class="Footer-text-p">Please deposit your amount in the following bank account:</p>
+                            <p class="Footer-text-p">Share receipt as proof of payment on 0309-4443478</p>
+                            <p class="Footer-text-p">Bank: Bank Alfalah Limited</p>
+                            <p class="Footer-text-p">Account Title: Smartlink Technologies</p>
+                            <p class="Footer-text-p">Account Number: 56035001294744</p>
+                            <p class="Footer-text-p">IBAN:PK89ALFH5603005001294744</p>
+                            <p class="Footer-text-p">Swift Code: ALFHPKKAXXX</p>
+                            <p class="Footer-text-p">*Please note that your order will be canceled if a receipt is not received within 24 hours.</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <span class="Billing-address">Billing address</span>
+            <div class="same-shipping">
+                <input type="radio" class="shipping-address-input All-redio-btn">
+                <span class="">Same as shipping address</span>
+            </div>
+            <div class="different-billing">
+                <input type="radio" class="different-billing-radio All-redio-btn">
+                <span class="billing-text">Use a different billing address</span>
+            </div> 
+            <div class="billing-footer">
+                <div class="address">
+                    <input type="text" placeholder="Country" class="form-address">
+                </div>
+                <div class="First-Last-Name">
+                    <input type="text" placeholder="First Name" class="form-control form-name ">
+                    <input type="text" placeholder="Last Name" class="form-control form-name name-margin">
+                </div>
+                <div class="address">
+                    <input type="text" placeholder="Address" class="form-address">
+                </div>
+                <div class="form-city">
+                    <input type="text" placeholder="City" class="form-name">
+                    <input type="text" placeholder="Postal code" class="form-name">
+                </div>
+                <div class="form-number">
+                    <input type="text" placeholder="Phone Number" class="form-address">
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger w-100 form-button">Pay now</button>
+        </div>
+        <div class="footer-Form-page">
+            <div class="Form-Right-part row"></div>
+            <div class="Total-prices-cart-enter row"></div> 
+
+
+        </div>
+        </div>
+   
+    
+    <script src="cart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charger</title>
+    <link rel="stylesheet" href="/CSSFile/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar-expand-sm bg-dark text-white-50 p-0" id="first">
+                <ul class="navbar-nav grid gap-5 px-5 py-0">
+                    <i class="fa fa-solid fa-x" id="left"></i>
+                    <li class="nav-item  h6 mb-0 ">Mi Pakistan</li>
+                    <li class="nav-item  h6 mb-0 ">Mi Community</li>
+                    <li class="nav-item  h6 mb-0 ">Support</li>
+                    <li class="nav-item  h6 mb-0 ">Track My Order</li>
+                    <li class="nav-item  h6 mb-0 ">WholeSale Query</li>
+                    <li class="nav-item  h6 mb-0 ">Report Faulty Products</li>
+                    <div class="px-5 d-inline-flex gap-3 justify-content-end flex-grow-1 align-items-center p-0"
+                        id="ul">
+                        <i
+                            class="fa h-100 d-flex justify-content-center align-items-center fa-sharp fa-light fa-magnifying-glass f-10 p-1"></i>
+                        <i class="fa h-100 d-flex justify-content-center align-items-center fa-thin fa-user p-1"></i>
+                        <i
+                            class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-heart p-1"></i>
+                        <i class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-bag-shopping p-3"
+                            id="shopping-bag">
+                            <div class="cartCount">0</div>
+                            <div class="no-items" id="bag">
+                                <div class="header mt-2"></div>
+                                <hr>
+                                <div class="footer"></div>
+                            </div>
+
+                        </i>
+                        <div class="overlay">
+                            <div class="card">
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        </ul>
+        </nav>
+    </div>
+    </div>
+    <div class="container-fluid" id="newnev">
+        <div class="row">
+            <a href="index.html" id="home-page">
+            <img src="logo/logofile.png" alt="" class=" col-1  float-end"id="logo">
+        </a>
+            <nav class="navbar-expand-sm text-dark-50 col-11 p-5">
+                <ul class="navbar-nav grid gap-5 px-5 p-2">
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('New Arrival')" onmouseout="out()"
+                        id="cadeList">New Arrivals</li>
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('Smartphones')" onmouseout="out()" id="">
+                        Smart
+                        Phone</li>
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('Power Bank')" onmouseout="out()" id="">
+                        Power
+                        Bank and Charging</li>
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('Gear & Devices')" onmouseout="out()">Gear &
+                        Devices</li>
+                    <li class="nav-item  h6 hover-effect" onmousemove="over('Camera & Visual')" onmouseout="out()">
+                        Camera &
+                        Visual</li>
+                    <li class="nav-item  h6 hover-effect" onmousemove="over('Audio')" onmouseout="out()">Audio</li>
+                    <li class="nav-item  h6 hover-effect " onmousemove="over('Lifestyle')" onmouseout="out()">Lifestyle
+                    </li>
+                    <li class="nav-item  h6 hover-effect" onmousemove="over('Details')" onmouseout="out()">Details</li>
+        </div>
+        <div id="categories" class="container">
+            <div class="container-fluid row" id="nick"></div>
+        </div>
+        <div class="container-fluid">
+            <div class="row div"></div>
+        </div>
+        <div class="prompt align-items-center">
+            <div class="prompt-img row  align-items-center">
+                <div class="col-2">
+                    <img src="" alt="" class="pro-img">
+                </div>
+                <div class="prompt-text col-8">
+                    <p>Is added to your shopping cart</p>
+                </div>
+            </div>
+            <div class="prompt-Action">
+                <a href="/index.html"> <button type="button" class="btn btn-danger btn-sm">Continue
+                        Shopping</button></a>
+                <button type="button" class="btn btn-danger btn-sm">Go To Cart</button>
+            </div>
+        </div>
+        <div class="container-fluid ">
+            <div class="row ">
+                <img src="EndPicture/slice_1.png" alt="" class="col-4 hover-effect" id="red">
+                <img src="EndPicture/slice2_.png" alt="" class="col-4 hover-effect" id="orange">
+                <img src="EndPicture/slice3_.png" alt="" class="col-4 hover-effect" id="yellow">
+            </div>
+        </div>
+        <br>
+        <div class="container-fluid email">
+            <div class="row">
+                <div class="col-3">
+                    <h5 class="">Let's stay in touch</h5>
+                    <p class="">Get updates on sales specials and more</p>
+                </div>
+
+                <div class="col-3 ">
+                    <div class="form-floating ">
+                        <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                        <label for="floatingInputGrid">Email address</label>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <h5>Follow Mi</h5>
+                    <p>We want to hear from you!</p>
+                </div>
+                <div class="col-4">
+                    <div class="icon text-end p-2 px-5">
+                        <i class="fa fa-brands fa-facebook "></i>
+                        <i class="fa fa-brands fa-youtube"></i>
+                        <i class="fa fa-brands fa-instagram"></i>
+                        <i class="fa fa-brands fa-x-twitter"></i>
+                        <i class="fa fa-brands fa-tiktok"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-white-50" id="About">
+            <div class="row">
+                <div class="col-4">
+                    <p class="d-inline-flex">About</p>
+                    <i class="fa fa-duotone fa-circle-question"></i>
+                </div>
+                <div class="col-4">
+                    <p class="d-inline-flex">FAQ's</p>
+                    <i class="fa fa-thin fa-ban col-4 "></i>
+                </div>
+                <div class="col-4">
+                    <p class="d-inline-flex">Need Help</p>
+                    <i class="fa fa-regular fa-comment-dots"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container-fluid bg-dark text-white-50 ">
+            <div class="row">
+                <div class="col-2 navbar-expand-sm">
+                    <h6>PRODUCTS</h6>
+                    <br>
+                    <p>All Products</p>
+                    <p>Redmi Watch 4</p>
+                    <p>Redmi Buds 5</p>
+                    <p>redmi buds 5 pro</p>
+                    <p>Mi Smart Speaker</p>
+                    <p>Mi Wifi Range Extender</p>
+                </div>
+                <div class="col-2">
+                    <h6>GET TO KNOW US</h6>
+                    <br>
+                    <p>Our Team</p>
+                    <p>About Us</p>
+                    <p>Terms & Conditions</p>
+                    <p>Packing Process</p>
+                    <p>Why Shop from Mistore.pk</p>
+                    <p>Customer Reviews</p>
+                </div>
+                <div class="col-2">
+                    <h6>AFTER SALE SERVICES</h6>
+                    <br>
+                    <p>Privacy Policy</p>
+                    <p>Refund & Return Policy</p>
+                    <p>Warranty & Repair Policy</p>
+                    <p>Shipping & Cancellation Policy</p>
+                    <p>Estimated Delivery Time</p>
+                    <p>Secure Payment</p>
+                    <p>User Guide</p>
+                </div>
+                <div class="col-2">
+                    <h6>LET US HELP YOU</h6>
+                    <br>
+                    <p>How to Place Order</p>
+                    <p>E-Gift Card</p>
+                    <p>Claim Process</p>
+                    <p>Product Authentication</p>
+                    <p>Track Your Order</p>
+                    <p>FAQ's</p>
+                    <p>Blogs</p>
+                    <p>Xiaomi Community</p>
+                </div>
+                <div class="col-4">
+                    <h6>CUSTOMER CARE</h6>
+                    <br>
+                    <p>Support</p>
+                    <p>Helpline Number : 03-111-111-050</p>
+                    <p>info@mistore.pk</p>
+                    <p>Service Timings 10am-6pm</p>
+                    <br>
+                    <h6>PAYMENT METHODS</h6>
+                    <div class="img d-inline-flex none">
+                        <div class="">
+                            <img src="PicturesFiles/PaymentGetways/web_icons-02.png" alt="" class="">
+                        </div>
+                        <div>
+                            <img src="PicturesFiles/PaymentGetways/web_icons-03.png" alt="" class="">
+                        </div>
+                        <div>
+                            <img src="PicturesFiles/PaymentGetways/web_icons-04.png" alt="" class="">
+                        </div>
+                        <div>
+                            <img src="PicturesFiles/PaymentGetways/web_icons-05.png" alt="" class="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid position-fixed bottom-0 bg-white" id="mobile">
+        <div class="row justify-content-center">
+            <div class="col-2 d-flex flex-column gap-2 justify-content-center align-items-center bg-white">
+                <i class="fa fs-5 fa-solid fa-house "></i>
+                <span>Home</span>
+            </div>
+            <div class="col-2 d-flex flex-column gap-2 justify-content-center align-items-center">
+                <i class="fa fs-5 fa-brands fa-product-hunt "></i>
+                <span>Product</span>
+            </div>
+            <div class="col-3">
+                <img src="logo/logofile.png" alt="" class="top-2">
+            </div>
+            <div class="col-2 d-flex flex-column gap-2 justify-content-center justify-content-end align-items-center">
+                <i class="fa fs-5 fa-brands fa-discourse "></i>
+                <span>Discover</span>
+            </div>
+            <div class="col-2 d-flex flex-column gap-2 justify-content-center justify-content-end align-items-center">
+                <i class="fa fs-5 fa-thin fa-user "></i>
+                <span>Account</span>
+            </div>
+        </div>
+    </div>
+    <script src="/BootJavascript/bootstrap.js"></script>
+    <script defer src="script.js"></script>
+    
+    <script src="Details.js"></script>
+    <script src="cart.js"></script>
+
+</body>
+
+</html>

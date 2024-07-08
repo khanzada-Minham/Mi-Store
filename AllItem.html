@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-Item</title>
+    <link rel="stylesheet" href="/CSSFile/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar-expand-sm bg-dark text-white-50 p-0" id="first">
+            <ul class="navbar-nav grid gap-5 px-5 py-0">
+         <i class="fa fa-solid fa-x" id="left"></i>
+         <li class="nav-item  h6 mb-0 ">Mi Pakistan</li>
+         <li class="nav-item  h6 mb-0 ">Mi Community</li>
+         <li class="nav-item  h6 mb-0 ">Support</li>
+         <li class="nav-item  h6 mb-0 ">Track My Order</li>
+         <li class="nav-item  h6 mb-0 ">WholeSale Query</li>
+         <li class="nav-item  h6 mb-0 ">Report Faulty Products</li>
+         <input type="text" placeholder="Search Product" id="Search-product" value="" onkeydown="saveValue()">
+         <div class="px-5 d-inline-flex gap-3 justify-content-end flex-grow-1 align-items-center p-0" id="ul">
+             <i class="fa h-100 d-flex justify-content-center align-items-center fa-sharp fa-light fa-magnifying-glass f-10 p-1"></i>
+             <i class="fa h-100 d-flex justify-content-center align-items-center fa-thin fa-user p-1"></i>
+             <a href="/login.html" class="link-login-page">
+             <i class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-heart p-1"></i></a>
+             <i class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-bag-shopping p-3"id="shopping-bag">
+                 <div class="cartCount">0</div>
+                 <div class="container no-items" id="bag">
+              <div class="header mt-2"></div>
+              <hr>
+              <div class="footer"></div>
+                 </div>
+                </i>
+                <div class="overlay">
+                 <div class="card">
+                     <span></span>
+                 </div>
+                </div>
+                    </div>
+        </div>
+        </ul>
+        </nav>
+    </div>
+    <div class="container-fluid" id="newnev">
+        <div class="row">
+            <img src="logo/logofile.png" alt="" class=" col-1  float-end" id="logo">
+            <nav class="navbar-expand-sm text-dark-50 col-11 p-5">
+                <ul class="navbar-nav grid gap-5 px-5 p-2">
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('New Arrival')" onmouseout="out()"
+                        id="cadeList">New Arrivals</li>
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('Smartphones')" onmouseout="out()" id="">
+                        Smart
+                        Phone</li>
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('Power Bank')" onmouseout="out()" id="">
+                        Power
+                        Bank and Charging</li>
+                    <li class="nav-item  h6 hover-effect" onmouseover="over('Gear & Devices')" onmouseout="out()">Gear &
+                        Devices</li>
+                    <li class="nav-item  h6 hover-effect" onmousemove="over('Camera & Visual')" onmouseout="out()">
+                        Camera &
+                        Visual</li>
+                    <li class="nav-item  h6 hover-effect" onmousemove="over('Audio')" onmouseout="out()">Audio</li>
+                    <li class="nav-item  h6 hover-effect " onmousemove="over('Lifestyle')" onmouseout="out()">Lifestyle
+                    </li>
+                    <li class="nav-item  h6 hover-effect" onmousemove="over('Details')" onmouseout="out()">Details</li>
+        </div>
+    </div>
+    <div id="categories" class="container">
+        <div class="container-fluid row" id="nick"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row div"></div>
+    </div>
+    <div class="prompt align-items-center">
+        <div class="prompt-img row  align-items-center">
+            <div class="col-2">
+                <img src="" alt="" class="pro-img">
+            </div>
+            <div class="prompt-text col-8">
+                <p>Is added to your shopping cart</p>
+            </div>
+        </div>
+        <div class="prompt-Action">
+            <a href="/index.html"> <button type="button" class="btn btn-danger btn-sm">Continue
+                    Shopping</button></a>
+            <button type="button" class="btn btn-danger btn-sm">Go To Cart</button>
+        </div>
+    </div>
+    <!-- View Page Started -->
+
+    <div class="container">
+        <div class="row">
+            <div class="back-to-home-page col-4">
+                <a href="/index.html">Home</a>
+                <i class="fa fa-duotone fa-caret-right svg"></i>
+                <a href="" class="Search-Results">Search Results</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="heading-text">
+                    <span>SEARCH RESULTS</span>
+                </div>
+                <div class="total-Products-display">
+                    <span class="box-shadow-SCP">Products</span>
+                    <span class="display-Categories box-shadow-SCP">Categories</span>
+                    <span class="display-Categories box-shadow-SCP">Page</span>
+                </div>
+
+                <div class="svgs">
+                    <div class="filter-prices">
+                        <div class="filter-text">
+                            <span> Price, Rs.</span>
+                        </div>
+                        <div class="plus">
+                            <i class="fa fa-light fa-plus Ava-plus" id="plusicon"></i>
+                            <i class="fa fa-light fa-minus Ava-minus" id="minusicon"></i>
+                        </div>
+                    </div>
+                    <!-- ///// -->
+                    <div class="range-values">
+                        <div class="prices-input">
+                            <div class="filter">
+                                <input type="number" class="input-min" value="15000">
+                            </div>
+                            <div class="saprater">-</div>
+                            <div class="filter">
+                                <input type="number" class="input-mex" value="75000">
+                            </div>
+                        </div>
+                        <div class="vertical">
+                            <div class="vertical-line"></div>
+                        </div>
+                        <div class="range-input">
+                            <input type="range" class="range-min" min="0" max="200000" value="15000">
+                            <input type="range" class="range-max" min="0" max="200000" value="75000">
+                        </div>
+                    </div>
+                    <!-- ///// -->
+                    <div class="hrline">
+                        <hr>
+                    </div>
+                    <div class="Availability">
+                        <div class="Availability-text">
+                            <span>Availability</span>
+                        </div>
+                        <div class="plus">
+                            <i class="fa fa-light fa-plus Ava-plus" id="InStk"></i>
+                            <i class="fa fa-light fa-minus Ava-minus" id="InSt"></i>
+                        </div>
+                    </div>
+                    <div class="InStock range-values">
+                        <input type="checkbox" id="cb2">
+                        <span>In Stock</span>
+                    </div>
+                    <div class="hrline">
+                        <hr>
+                    </div>
+                    <div class="Availability">
+                        <div class="Availability-text">
+                            <span>Product type</span>
+                        </div>
+                        <div class="plus">
+                            <i class="fa fa-light fa-plus Ava-plus" id=""></i>
+                            <i class="fa fa-light fa-minus Ava-minus" id=""></i>
+                        </div>
+                    </div>
+                    <div class="Instock range-values">
+                        <div class="checkbox-item"><input type="checkbox" id="cb2">Eco</div>
+                        <div class="checkbox-item"><input type="checkbox" id="cb2">eco</div>
+                        <div class="checkbox-item"><input type="checkbox" id="cb2">Phone</div>
+                        <div class="checkbox-item"><input type="checkbox" id="cb2">Simple</div>
+
+                    </div>
+
+                    <div class="hrline">
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="Showing-results d-flex">
+                    <div class="col-9">Showing 40 results for</div>
+                    <!-- //// -->
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="box1">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8 9C8 8.44771 8.44772 8 9 8H10.8097C11.3619 8 11.8097 8.44772 11.8097 9V10.8097C11.8097 11.3619 11.3619 11.8097 10.8097 11.8097H9C8.44771 11.8097 8 11.3619 8 10.8097V9ZM8 15.0955C8 14.5432 8.44772 14.0955 9 14.0955H10.8097C11.3619 14.0955 11.8097 14.5432 11.8097 15.0955V16.9051C11.8097 17.4574 11.3619 17.9051 10.8097 17.9051H9C8.44771 17.9051 8 17.4574 8 16.9051V15.0955ZM9 20.1907C8.44772 20.1907 8 20.6384 8 21.1907V23.0003C8 23.5526 8.44771 24.0003 9 24.0003H10.8097C11.3619 24.0003 11.8097 23.5526 11.8097 23.0003V21.1907C11.8097 20.6384 11.3619 20.1907 10.8097 20.1907H9ZM14.0947 15.0955C14.0947 14.5432 14.5424 14.0955 15.0947 14.0955H16.9044C17.4567 14.0955 17.9044 14.5432 17.9044 15.0955V16.9051C17.9044 17.4574 17.4567 17.9051 16.9044 17.9051H15.0947C14.5424 17.9051 14.0947 17.4574 14.0947 16.9051V15.0955ZM15.0947 20.1907C14.5424 20.1907 14.0947 20.6384 14.0947 21.1907V23.0003C14.0947 23.5526 14.5424 24.0003 15.0947 24.0003H16.9044C17.4567 24.0003 17.9044 23.5526 17.9044 23.0003V21.1907C17.9044 20.6384 17.4567 20.1907 16.9044 20.1907H15.0947ZM14.0947 9C14.0947 8.44771 14.5424 8 15.0947 8H16.9044C17.4567 8 17.9044 8.44772 17.9044 9V10.8097C17.9044 11.3619 17.4567 11.8097 16.9044 11.8097H15.0947C14.5424 11.8097 14.0947 11.3619 14.0947 10.8097V9ZM21.1904 14.0955C20.6381 14.0955 20.1904 14.5432 20.1904 15.0955V16.9051C20.1904 17.4574 20.6381 17.9051 21.1904 17.9051H23.0001C23.5524 17.9051 24.0001 17.4574 24.0001 16.9051V15.0955C24.0001 14.5432 23.5524 14.0955 23.0001 14.0955H21.1904ZM20.1904 21.1907C20.1904 20.6384 20.6381 20.1907 21.1904 20.1907H23.0001C23.5524 20.1907 24.0001 20.6384 24.0001 21.1907V23.0003C24.0001 23.5526 23.5524 24.0003 23.0001 24.0003H21.1904C20.6381 24.0003 20.1904 23.5526 20.1904 23.0003V21.1907ZM21.1904 8C20.6381 8 20.1904 8.44771 20.1904 9V10.8097C20.1904 11.3619 20.6381 11.8097 21.1904 11.8097H23.0001C23.5524 11.8097 24.0001 11.3619 24.0001 10.8097V9C24.0001 8.44772 23.5524 8 23.0001 8H21.1904Z"
+                            fill="#333333"></path>
+                    </svg>
+                    <!-- ////// -->
+                    <svg width="32" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="box2">
+                        <rect x="8.77393" y="10" width="16" height="2" rx="1" fill="#333333"></rect>
+                        <rect x="10.2739" y="15" width="13" height="2" rx="1" fill="#333333"></rect>
+                        <rect x="11.7739" y="20" width="10" height="2" rx="1" fill="#333333"></rect>
+                    </svg>
+                </div>
+                <div class=" d-flex container">
+                    <div class="row main-data-cart">
+                    </div>
+                    <!-- ///// -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="row ">
+            <img src="EndPicture/slice_1.png" alt="" class="col-4 hover-effect" id="red">
+            <img src="EndPicture/slice2_.png" alt="" class="col-4 hover-effect" id="orange">
+            <img src="EndPicture/slice3_.png" alt="" class="col-4 hover-effect" id="yellow">
+        </div>
+    </div>
+    <br>
+    <div class="container-fluid email">
+        <div class="row">
+            <div class="col-3">
+                <h5 class="">Let's stay in touch</h5>
+                <p class="">Get updates on sales specials and more</p>
+            </div>
+
+            <div class="col-3 ">
+                <div class="form-floating ">
+                    <input type="email" class="form-control" id="floatingInputGrid" placeholder="name@example.com">
+                    <label for="floatingInputGrid">Email address</label>
+                </div>
+            </div>
+            <div class="col-2">
+                <h5>Follow Mi</h5>
+                <p>We want to hear from you!</p>
+            </div>
+            <div class="col-4">
+                <div class="icon text-end p-2 px-5">
+                    <i class="fa fa-brands fa-facebook "></i>
+                    <i class="fa fa-brands fa-youtube"></i>
+                    <i class="fa fa-brands fa-instagram"></i>
+                    <i class="fa fa-brands fa-x-twitter"></i>
+                    <i class="fa fa-brands fa-tiktok"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white-50" id="About">
+        <div class="row">
+            <div class="col-4">
+                <p class="d-inline-flex">About</p>
+                <i class="fa fa-duotone fa-circle-question"></i>
+            </div>
+            <div class="col-4">
+                <p class="d-inline-flex">FAQ's</p>
+                <i class="fa fa-thin fa-ban col-4 "></i>
+            </div>
+            <div class="col-4">
+                <p class="d-inline-flex">Need Help</p>
+                <i class="fa fa-regular fa-comment-dots"></i>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">
+        <div class="container-fluid bg-dark text-white-50 ">
+            <div class="row">
+                <div class="col-2 navbar-expand-sm">
+                    <h6>PRODUCTS</h6>
+                    <br>
+                    <p>All Products</p>
+                    <p>Redmi Watch 4</p>
+                    <p>Redmi Buds 5</p>
+                    <p>redmi buds 5 pro</p>
+                    <p>Mi Smart Speaker</p>
+                    <p>Mi Wifi Range Extender</p>
+                </div>
+                <div class="col-2">
+                    <h6>GET TO KNOW US</h6>
+                    <br>
+                    <p>Our Team</p>
+                    <p>About Us</p>
+                    <p>Terms & Conditions</p>
+                    <p>Packing Process</p>
+                    <p>Why Shop from Mistore.pk</p>
+                    <p>Customer Reviews</p>
+                </div>
+                <div class="col-2">
+                    <h6>AFTER SALE SERVICES</h6>
+                    <br>
+                    <p>Privacy Policy</p>
+                    <p>Refund & Return Policy</p>
+                    <p>Warranty & Repair Policy</p>
+                    <p>Shipping & Cancellation Policy</p>
+                    <p>Estimated Delivery Time</p>
+                    <p>Secure Payment</p>
+                    <p>User Guide</p>
+                </div>
+                <div class="col-2">
+                    <h6>LET US HELP YOU</h6>
+                    <br>
+                    <p>How to Place Order</p>
+                    <p>E-Gift Card</p>
+                    <p>Claim Process</p>
+                    <p>Product Authentication</p>
+                    <p>Track Your Order</p>
+                    <p>FAQ's</p>
+                    <p>Blogs</p>
+                    <p>Xiaomi Community</p>
+                </div>
+                <div class="col-4">
+                    <h6>CUSTOMER CARE</h6>
+                    <br>
+                    <p>Support</p>
+                    <p>Helpline Number : 03-111-111-050</p>
+                    <p>info@mistore.pk</p>
+                    <p>Service Timings 10am-6pm</p>
+                    <br>
+                    <h6>PAYMENT METHODS</h6>
+                    <div class="img d-inline-flex none">
+                        <div class="">
+                            <img src="PicturesFiles/PaymentGetways/web_icons-02.png" alt="" class="">
+                        </div>
+                        <div>
+                            <img src="PicturesFiles/PaymentGetways/web_icons-03.png" alt="" class="">
+                        </div>
+                        <div>
+                            <img src="PicturesFiles/PaymentGetways/web_icons-04.png" alt="" class="">
+                        </div>
+                        <div>
+                            <img src="PicturesFiles/PaymentGetways/web_icons-05.png" alt="" class="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid position-fixed bottom-0 bg-white" id="mobile">
+        <div class="row justify-content-center">
+            <div class="col-2 d-flex flex-column gap-2 justify-content-center align-items-center bg-white">
+                <i class="fa fs-5 fa-solid fa-house "></i>
+                <span>Home</span>
+            </div>
+            <div class="col-2 d-flex flex-column gap-2 justify-content-center align-items-center">
+                <i class="fa fs-5 fa-brands fa-product-hunt "></i>
+                <span>Product</span>
+            </div>
+            <div class="col-3">
+                <img src="logo/logofile.png" alt="" class="top-2">
+            </div>
+            <div class="col-2 d-flex flex-column gap-2 justify-content-center justify-content-end align-items-center">
+                <i class="fa fs-5 fa-brands fa-discourse "></i>
+                <span>Discover</span>
+            </div>
+            <div class="col-2 d-flex flex-column gap-2 justify-content-center justify-content-end align-items-center">
+                <i class="fa fs-5 fa-thin fa-user "></i>
+                <span>Account</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</body>
+<script src="script.js"></script>
+<script src="index.js"></script>
+<script src="allitem.js"></script>
+<script src="cart.js"></script>
+
+</html>
