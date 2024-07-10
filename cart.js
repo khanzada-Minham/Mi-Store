@@ -31,7 +31,6 @@ function AddToCart(id) {
 }
 
 function localgetItem() {
-    // let cart = JSON.parse(localStorage.getItem('AddToCart')) || [];
     let list = '';
     let total = 0;
     let totalQuantity = 0;
@@ -245,7 +244,6 @@ localgetItem();
 
 
 function removeItem(index) {
-    // let cart = JSON.parse(localStorage.getItem('AddToCart')) || [];
     if (index >= 0 && index < cart.length) {
         cart.splice(index, 1);
         localStorage.setItem('AddToCart', JSON.stringify(cart));
@@ -323,7 +321,7 @@ if(shippingAddressInput){
 }
 
 function togglePopup(){
-    // document.getElementById('popup-1').classList.toggle('active');
     document.getElementById('popup-1').classList.toggle('active');
     console.log('hello-toggle');
 }
+

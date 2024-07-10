@@ -196,9 +196,8 @@ function saveValue() {
     AllIConSvg = document.querySelector('.all-icons-svg'),
     DataPuch = '',
     DataPuchinnerHTML = '',
-    abcd = data.filter(x => x.productName.toUpperCase().includes(searchValue));
-    // searchValue.data.productName;
-    abcd.forEach((item)=>{
+    searchingProduct = data.filter(x => x.productName.toUpperCase().includes(searchValue));
+    searchingProduct.forEach((item)=>{
         let searchDataPuch = 
         `
             <div class="" style="width: 10rem;">
@@ -214,7 +213,10 @@ function saveValue() {
     displayimagesearch.innerHTML = DataPuch;
     
     SearchProductName1 = data.filter(x => x.productName.includes(searchValue));
+    console.log(SearchProductName1);
+    if(SearchProductName1){
 
+  
     let IconSvg =
     `
     <div class="icons">
@@ -236,8 +238,11 @@ function saveValue() {
     `;  
     DataPuchinnerHTML += IconSvg;
     AllIConSvg.innerHTML = DataPuchinnerHTML;
-
 }
+}
+
+
+
 
 let SearchProduct = document.getElementById('Search-product');
 if(SearchProduct){

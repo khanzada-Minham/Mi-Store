@@ -30,7 +30,6 @@ function search3(keyword, fields) {
 }
 function displayResults(results) {
     let list = '';
-
     results.forEach(item => {
         const cartItemHTML = `
                 <a href="/Charger.html?ProductID=${item.proID}"><div class="col-2 " style="width: 18rem;">

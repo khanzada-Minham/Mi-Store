@@ -14,33 +14,38 @@
     <div class="container-fluid">
         <div class="row">
             <nav class="navbar-expand-sm bg-dark text-white-50 p-0" id="first">
-            <ul class="navbar-nav grid gap-5 px-5 py-0">
-         <i class="fa fa-solid fa-x" id="left"></i>
-         <li class="nav-item  h6 mb-0 ">Mi Pakistan</li>
-         <li class="nav-item  h6 mb-0 ">Mi Community</li>
-         <li class="nav-item  h6 mb-0 ">Support</li>
-         <li class="nav-item  h6 mb-0 ">Track My Order</li>
-         <li class="nav-item  h6 mb-0 ">WholeSale Query</li>
-         <li class="nav-item  h6 mb-0 ">Report Faulty Products</li>
-         <input type="text" placeholder="Search Product" id="Search-product" value="" onkeydown="saveValue()">
-         <div class="px-5 d-inline-flex gap-3 justify-content-end flex-grow-1 align-items-center p-0" id="ul">
-             <i class="fa h-100 d-flex justify-content-center align-items-center fa-sharp fa-light fa-magnifying-glass f-10 p-1"></i>
-             <i class="fa h-100 d-flex justify-content-center align-items-center fa-thin fa-user p-1"></i>
-             <a href="/login.html" class="link-login-page">
-             <i class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-heart p-1"></i></a>
-             <i class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-bag-shopping p-3"id="shopping-bag">
-                 <div class="cartCount">0</div>
-                 <div class="container no-items" id="bag">
-              <div class="header mt-2"></div>
-              <hr>
-              <div class="footer"></div>
-                 </div>
-                </i>
-                <div class="overlay">
-                 <div class="card">
-                     <span></span>
-                 </div>
-                </div>
+                <ul class="navbar-nav grid gap-5 px-5 py-0">
+                    <i class="fa fa-solid fa-x" id="left"></i>
+                    <li class="nav-item  h6 mb-0 ">Mi Pakistan</li>
+                    <li class="nav-item  h6 mb-0 ">Mi Community</li>
+                    <li class="nav-item  h6 mb-0 ">Support</li>
+                    <li class="nav-item  h6 mb-0 ">Track My Order</li>
+                    <li class="nav-item  h6 mb-0 ">WholeSale Query</li>
+                    <li class="nav-item  h6 mb-0 ">Report Faulty Products</li>
+                    <input type="text" placeholder="Search Product" id="Search-product" value=""
+                        onkeydown="saveValue()">
+                    <div class="px-5 d-inline-flex gap-3 justify-content-end flex-grow-1 align-items-center p-0"
+                        id="ul">
+                        <i
+                            class="fa h-100 d-flex justify-content-center align-items-center fa-sharp fa-light fa-magnifying-glass f-10 p-1"></i>
+                        <i class="fa h-100 d-flex justify-content-center align-items-center fa-thin fa-user p-1"></i>
+                        <a href="/login.html" class="link-login-page">
+                            <i
+                                class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-heart p-1"></i></a>
+                        <i class="fa h-100 d-flex justify-content-center align-items-center fa-duotone fa-bag-shopping p-3"
+                            id="shopping-bag">
+                            <div class="cartCount">0</div>
+                            <div class="container no-items" id="bag">
+                                <div class="header mt-2"></div>
+                                <hr>
+                                <div class="footer"></div>
+                            </div>
+                        </i>
+                        <div class="overlay">
+                            <div class="card">
+                                <span></span>
+                            </div>
+                        </div>
                     </div>
         </div>
         </ul>
@@ -48,9 +53,10 @@
     </div>
     <div class="container-fluid" id="newnev">
         <div class="row">
-            <img src="logo/logofile.png" alt="" class=" col-1  float-end" id="logo">
-            <nav class="navbar-expand-sm text-dark-50 col-11 p-5">
+            <nav class="navbar-expand-sm text-dark-50 col-12 p-5">
                 <ul class="navbar-nav grid gap-5 px-5 p-2">
+                    <a class="logo-display" href="/index.html"><img src="logo/logofile.png" alt="" class="col-2 logocol"
+                            id=""></a>
                     <li class="nav-item  h6 hover-effect" onmouseover="over('New Arrival')" onmouseout="out()"
                         id="cadeList">New Arrivals</li>
                     <li class="nav-item  h6 hover-effect" onmouseover="over('Smartphones')" onmouseout="out()" id="">
@@ -107,11 +113,17 @@
                     <span>SEARCH RESULTS</span>
                 </div>
                 <div class="total-Products-display">
-                    <span class="box-shadow-SCP">Products</span>
-                  <a href=""><span class="display-Categories box-shadow-SCP">Categories</span></a>
+                    <span class="box-shadow-SCP" onclick="DisplayImg()">Products</span>
+                    <span class="display-Categories box-shadow-SCP" onclick="DisplayCategorie ()">Categories</span>
                     <span class="display-Categories box-shadow-SCP">Page</span>
                 </div>
-
+                <div class="data-img">
+                    <!-- <div class="container">
+                    <div class="row">
+                        <span>Redmi</span>
+                    </div>
+                   </div> -->
+                </div>
                 <div class="svgs">
                     <div class="filter-prices">
                         <div class="filter-text">
@@ -155,7 +167,7 @@
                         </div>
                     </div>
                     <div class="InStock range-values">
-                        <input type="checkbox" id="cb2">
+                        <input type="checkbox" id="cb3" onclick="DisplayInStock(event)">
                         <span>In Stock</span>
                     </div>
                     <div class="hrline">
@@ -171,10 +183,10 @@
                         </div>
                     </div>
                     <div class="Instock range-values">
-                        <div class="checkbox-item"><input type="checkbox" id="cb2">Eco</div>
-                        <div class="checkbox-item"><input type="checkbox" id="cb2">eco</div>
-                        <div class="checkbox-item"><input type="checkbox" id="cb2">Phone</div>
-                        <div class="checkbox-item"><input type="checkbox" id="cb2">Simple</div>
+                        <div class="checkbox-item"><input type="checkbox" onclick="DisplayAudio()" id="cb2">Eco</div>
+                        <div class="checkbox-item"><input type="checkbox" onclick="Displayeco()" id="cb3">eco</div>
+                        <div class="checkbox-item"><input type="checkbox" onclick="DisplayPhone()" id="cb4">Phone</div>
+                        <!-- <div class="checkbox-item"><input type="checkbox" id="cb5">Simple</div> -->
 
                     </div>
 
@@ -183,7 +195,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-9">
+            <div class="col-9 showing-img-to-search-page">
                 <div class="Showing-results d-flex">
                     <div class="col-9">Showing 40 results for</div>
                     <!-- //// -->
@@ -204,7 +216,7 @@
                 <div class=" d-flex container">
                     <div class="row main-data-cart">
                     </div>
-                    <!-- ///// -->
+
                 </div>
             </div>
         </div>
@@ -360,12 +372,12 @@
             </div>
         </div>
     </div>
-</body>
 
-</body>
+
+    
 <script src="script.js"></script>
 <script src="index.js"></script>
 <script src="allitem.js"></script>
 <script src="cart.js"></script>
-
+</body>
 </html>
