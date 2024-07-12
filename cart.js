@@ -30,9 +30,9 @@ function AddToCart(id) {
     localgetItem();
 }
 
+let total = 0;
 function localgetItem() {
     let list = '';
-    let total = 0;
     let totalQuantity = 0;
     let list2 = '';
     let lestform = '';
@@ -45,7 +45,7 @@ function localgetItem() {
     const Footersummary = document.querySelector('.footer');
     const tableData = document.querySelector('.table-data');
     const lestFormData = document.querySelector('.Form-Right-part'),
-    TotalPricesCartEnter =document.querySelector('.Total-prices-cart-enter')
+    TotalPricesCartEnter = document.querySelector('.Total-prices-cart-enter')
     // console.log(TotalPricesCartEnter);
 
     totalQuantity = 0;
@@ -116,7 +116,7 @@ function localgetItem() {
                             </div>
                         </td>
                         <td colspan="2">
-                            <i class="fa fa-thin fa-x end-0" onclick="removeItem(${index})"></i>
+                            <i class="fa fa-thin fa-x end-0 removecurser" onclick="removeItem(${index})"></i>
                         </td>
                     </tr>
                 `;
@@ -130,46 +130,45 @@ function localgetItem() {
                 <p class='col-3 last-page-productName'>Rs.${item.price}</p>
                 
            `
-        }
-    });
+            }
+        });
 
         if (TotalPricesCartEnter) {
             TotalPricesCartEnter.innerHTML = `
-            <div class="Discount-Style">
-            <input type="text" placeholder="Discount code of gift card" class="col-5 Discount-input">
-            <button type="button" class="btn btn-light apply-btn col-2">Apply</button>
-            </div>
         <div class="Discount-Style">
-        <samp class="col-5">Subtotal</samp>
-        <samp class="col-4">Rs.${total}</samp>
+        <input type="text" placeholder="Discount Code Of Gift Card" class="col-5 Discount-input ">
+        <button type="button" class="btn btn-light apply-btn col-2 disableBtn" onclick="DiscountAmmount()">Apply</button>
         </div>
         <div class="Discount-Style">
-            <samp  class="col-5">Shipping<i class="fa-regular fa-circle-question question-mark" onclick="togglePopup()"></i>
-            
-            </samp>
-            <span class="col-4">Rs 190.00</span>
+        <samp class="col-5 ">Subtotal</samp>
+        <samp class="col-4 ">Rs${total}</samp>
+        </div>
+        <div class="Discount-Style Discount-Style-total">
+        <samp class="total-price-add-shipping col-5"></samp>
+        <span class="col-4"></span>
         </div>
         <div class="Discount-Style">
-            <samp class="total-price-add-shipping col-5">Total</samp>
-            <span class="col-4">Rs ${total + 190}</span>
+        <samp  class="col-5">Shipping<i class="fa-regular fa-circle-question question-mark" onclick="togglePopup()"></i>
+        </samp>
+        <span class="col-4">Rs 190.00</span>
         </div>
-            `
+        <div class="Discount-Style ABCTOTAL">
+        <samp class="sub-total-price total-price-add-shipping col-5">Total</samp>
+        <span class="sub-total-price Discount-total col-4">Rs ${total + 190}</span>
+        </div>
+        `
         }
 
-       let DiscountInputType =  document.querySelector('.Discount-input');
-    //    let questionMark = document.querySelector('.question-mark');
-    //    questionMark.addEventListener('click',()=>{
-    //     console.log('questionMark',questionMark);
-    //    })
-    let ApplyBtn = document.querySelector('.apply-btn');
-    if(ApplyBtn){
-        DiscountInputType.addEventListener('keyup',()=>{
-            ApplyBtn.style.color = 'white'
-            ApplyBtn.style.background = 'rgb(243, 116, 6)';
-       })
-    }
-            
-      
+        let DiscountInputType = document.querySelector('.Discount-input');
+        let ApplyBtn = document.querySelector('.apply-btn');
+        if (ApplyBtn) {
+            DiscountInputType.addEventListener('keyup', () => {
+                ApplyBtn.style.color = 'white'
+                ApplyBtn.style.background = 'rgb(243, 116, 6)';
+            })
+        }
+
+
         if (Footersummary) {
             Footersummary.innerHTML = `
                 <div class="">
@@ -218,8 +217,8 @@ function localgetItem() {
                             </select>
                             <span id="cityDropdwonErrorText" style="display: none; color:red">* Please select the city</span>
                         </div>
-                        <button type="button" class="btn btn-outline-secondary">Continue Shopping</button>
-                        <button type="button" class="btn btn-outline-danger">Proceed to Checkout</button>
+                        <a href="/index.html" class="btn btn-outline-secondary">Continue Shopping</a>
+                        <a href="/form.html" class="btn btn-outline-danger">Proceed to Checkout</a>
                     </div>
                 </div>
             `;
@@ -247,6 +246,8 @@ function removeItem(index) {
     if (index >= 0 && index < cart.length) {
         cart.splice(index, 1);
         localStorage.setItem('AddToCart', JSON.stringify(cart));
+        let CartCheck = document.querySelector('.cart-check');
+        CartCheck.innerHTML = '';
         localgetItem();
     }
 }
@@ -265,63 +266,148 @@ function UserQuantityInput(proID, newQuantity) {
             localgetItem();
         }
     } else {
-        console.log('Item not found in cart');
+        // console.log('Item not found in cart');
         localgetItem();
     }
 }
 
 
 let CashOnDeliveryRadioButton = document.querySelector('.CashOnDelivery-radio-button'),
-DebitFooter = document.querySelector('.Debit-footer'),
-DebitHearderRedio = document.querySelector('.Debit-hearder-redio'),
-BankDepositRedioBtn = document.querySelector('.Bank-Deposit-redio-btn'),
-BankDepositFooter = document.querySelector('.Bank-Deposit-Footer'),
-DifferentBillingRadio = document.querySelector('.different-billing-radio'),
-BillingFooter = document.querySelector('.billing-footer'),
-shippingAddressInput = document.querySelector('.shipping-address-input');
+    DebitFooter = document.querySelector('.Debit-footer'),
+    DebitHearderRedio = document.querySelector('.Debit-hearder-redio'),
+    BankDepositRedioBtn = document.querySelector('.Bank-Deposit-redio-btn'),
+    BankDepositFooter = document.querySelector('.Bank-Deposit-Footer'),
+    DifferentBillingRadio = document.querySelector('.different-billing-radio'),
+    BillingFooter = document.querySelector('.billing-footer'),
+    shippingAddressInput = document.querySelector('.shipping-address-input');
 
 function clearRadio() {
     let radio = document.querySelectorAll(".All-redio-btn");
-    radio.forEach((uncheck)=>{
-      uncheck.checked = false;
+    radio.forEach((uncheck) => {
+        uncheck.checked = false;
     })
- }
- if(CashOnDeliveryRadioButton){
-        CashOnDeliveryRadioButton.addEventListener('click',()=>{
+}
+if (CashOnDeliveryRadioButton) {
+    CashOnDeliveryRadioButton.addEventListener('click', () => {
         DebitFooter.style.display = 'none';
         BankDepositFooter.style.display = 'none';
         clearRadio()
-        
-})
- }
 
-if(DebitHearderRedio){
-        DebitHearderRedio.addEventListener('click',()=>{
-        DebitFooter.style.display = 'block';
-})
+    })
 }
-if(BankDepositRedioBtn){
-    BankDepositRedioBtn.addEventListener('click',()=>{
+
+if (DebitHearderRedio) {
+    DebitHearderRedio.addEventListener('click', () => {
+        DebitFooter.style.display = 'block';
+    })
+}
+if (BankDepositRedioBtn) {
+    BankDepositRedioBtn.addEventListener('click', () => {
         BankDepositFooter.style.display = 'block';
     })
 }
 
-if(DifferentBillingRadio){
-    DifferentBillingRadio.addEventListener('click',()=>{
+if (DifferentBillingRadio) {
+    DifferentBillingRadio.addEventListener('click', () => {
         BillingFooter.style.display = 'block';
-       
+
     })
 }
 
-if(shippingAddressInput){
-    shippingAddressInput.addEventListener('click',()=>{
+if (shippingAddressInput) {
+    shippingAddressInput.addEventListener('click', () => {
         BillingFooter.style.display = 'none';
         clearRadio()
     })
 }
 
-function togglePopup(){
+function togglePopup() {
     document.getElementById('popup-1').classList.toggle('active');
-    console.log('hello-toggle');
+    // console.log('hello-toggle');
+}
+function togglePopup1() {
+    document.getElementById('popup-2').classList.toggle('active');
 }
 
+
+function DiscountAmmount() {
+    let discountAmmount = document.querySelector('.Discount-input').value;
+    if (discountAmmount === 'ABC40') {
+        //total - 1050;
+        console.log('total',total);
+        let discountTotalAmount =
+            `
+<div class="Discount-Style">
+        <div class="alert alert-warning alert-dismissible fade show dis-style Discount-css" role="alert">
+        <strong class="Discont-prices-RS">Discont</strong>Rs 1,050
+        <button type="button" onclick="discontPricesTotal()" class="btn-close x-btn close-discont-btn" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> 
+        </div>
+        `
+        document.querySelector('.Discount-Style-total').innerHTML = discountTotalAmount;
+        let subTotal =
+            `
+        <samp class="sub-total-price total-price-add-shipping col-5">Total</samp>
+        <span class="sub-total-price Discount-total col-4">Rs ${(total + 190) - 1050}</span>
+
+
+        `
+        document.querySelector('.ABCTOTAL').innerHTML = subTotal;
+    }
+    else if (discountAmmount === 'DA60') {
+        total - 6000;
+        let discountTotalAmount =
+        `
+        <div class="Discount-Style">
+        <div class="alert alert-warning alert-dismissible fade show dis-style Discount-css" role="alert">
+        <strong class="Discont-prices-RS">Discont</strong>Rs 6,000
+        <button type="button" class="btn-close x-btn close-discont-btn" id="" onclick="discontPricesTotal()" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div> 
+        </div>
+        `
+        document.querySelector('.Discount-Style-total').innerHTML = discountTotalAmount;
+        let subTotal =
+        `
+        <samp class="sub-total-price total-price-add-shipping col-5 ">Total</samp>
+        <span class="sub-total-price Discount-total col-4">Rs ${(total + 190) - 6000 }</span>
+        `
+        document.querySelector('.ABCTOTAL').innerHTML = subTotal;
+    }
+    else {
+        togglePopup1()
+    }
+
+}
+
+function discontPricesTotal(){
+    let discountAmmount = document.querySelector('.Discount-input').value;
+        if(discountAmmount === "DA60" || discountAmmount === "ABC40"){
+            let subTotal =
+            `
+            <samp class="sub-total-price total-price-add-shipping col-5 ">Total</samp>
+            <span class="sub-total-price Discount-total col-4">Rs ${total + 190}</span>
+            `
+            document.querySelector('.ABCTOTAL').innerHTML = subTotal;
+        }
+
+    }
+
+let abcd = document.querySelector('.disableBtn');
+abcd.addEventListener('click', function () {
+     document.querySelector('.Discount-input').disabled = true;
+    //  document.querySelector('.Discount-input').value = '';
+     let ababab = document.querySelector('.x-btn');
+     ababab.addEventListener('click',()=>{
+        document.querySelector('.Discount-input').disabled = false;
+        document.querySelector('.Discount-input').value = '';
+        
+     }) 
+    
+})
+
+let arr = document.getElementById('popup-2');
+arr.addEventListener('click',()=>{
+    document.querySelector('.Discount-input').disabled = false;
+    // document.querySelector('.Discount-input').value = '';
+})
+  

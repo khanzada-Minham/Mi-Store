@@ -147,28 +147,54 @@ table {
   margin-left: 12px;
   padding: 15px
 }
+.a-href{
+  display: contents;
+}
 .footer-Form-page{
   background-color: #fafafa;
   margin-left: 10px;
   padding: 20px
 }
+/* .Search-product-item{
+  display: none;
+} */
+ .Discont-prices-RS{
+  margin-right: 222px;
+ }
 .check-out-button{
-  margin-left: 88px;
+    margin-left: 88px;
     height: 38px;
     margin-top: 19px;
     padding: 8px;
+}
+.x-btn{
+  font-size: 10px;
+}
+.Discount-css{
+    width: 450px;
+    display: flex;
+    padding: 6px;
+    font-size: 17px;
+    font-family: sans-serif;
+}
+.HelloHref{
+  display: contents;
 }
 .view-cart-button{
   margin-left: 102px;
   margin-top: 12px;
   font-size: 13px;
 }
+.another-bag{
+  margin-top: -11px;
+  margin-right: -11px;
+}
 
 .filter-btn{
     display: flex;
     width: 269px;
     justify-content: center;
-    display: none;
+    /* display: none; */
 }
 .display-image-search{
   display: ruby-text;
@@ -928,7 +954,7 @@ display: none ;
 .sub-total{
   /* justify-content: space-between; */
   display: flex;
-  padding: 10px;
+  padding: 3px;
 }
 .TotalForm{
   /* justify-content: space-between; */
@@ -953,7 +979,9 @@ display: none ;
   display: flex;
   justify-content: space-between;
 }
-
+.plus{
+  cursor: pointer;
+}
 
 .login-text{
   justify-content: center;
@@ -1127,6 +1155,12 @@ display: none ;
   margin-top: 10px;
 }
 #cb2 {
+  accent-color: #34495e;
+}
+#cb4 {
+  accent-color: #34495e;
+}
+#cb3 {
   accent-color: #34495e;
 }
 .InStock{
@@ -1341,6 +1375,9 @@ input[type="range"]::-moz-range-thumb{
     cursor: pointer;
     display: inline-block;
 }
+.removecurser{
+  cursor: pointer;
+}
 .total-Products-display{
   cursor: pointer;
 }
@@ -1358,4 +1395,18 @@ input[type="range"]::-moz-range-thumb{
 }
 .total-Products-display{
   margin-bottom: 21px;
+}
+.last-page-img{
+  margin-bottom: 12px;
+  /* border: 1px solid #e5e4e4; */
+  mix-blend-mode: darken;
+}
+.dis-style{
+  font-size: 24px;
+  color: rgb(255, 123, 0);
+}
+.dis-total-style{
+  margin-left: 219px;
+  margin-top: 7px;
+  color: rgb(255, 123, 0);
 }

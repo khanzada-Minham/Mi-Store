@@ -70,8 +70,8 @@ rangeInputs.forEach((input) => {
             vertical.style.left = (minVal / rangeInputs[0].max) * 100 + '%';
             vertical.style.right = 100 - (maxVal / rangeInputs[1].max) * 100 + '%';
         }
-        let cart = JSON.parse(localStorage.getItem('MiPakistan')) || [],
-            CardCol9 = document.querySelector('.main-data-cart'),
+        // let cart = JSON.parse(localStorage.getItem('MiPakistan')) || [],
+          let CardCol9 = document.querySelector('.main-data-cart'),
             ListData = '';
 
         cart.forEach((item) => {
@@ -104,15 +104,16 @@ function cartInLocal(){
     CartInLocal.forEach((item) => {
         
         let FelterDataPuch =
-            `
-                <div class="card-picture-top" style="width: 18rem ">
-                    <img src="${item.img}" class="card-img-top " alt="...">
-                    <div class="card-body">
-                     <button class="btn btn-dark filter-btn" type="button" onclick="AddToCart(7)">Add To Cart</button>
-                        <p class="card-text">${item.productName} ....</p>
-                        <span class="card-prices">Rs.${item.price}</span>
-                    </div>
-                </div>
+    `
+    <div class="card-picture-top style-card-top " style="width: 18rem ">
+    <a href="/Charger.html?ProductID=${item.proID}"><img src="${item.img}" class="card-img-top " alt="..."></a>
+
+    <div class="card-body">
+    <p class="card-text">${item.productName} ....</p>
+    <span class="card-prices">Rs.${item.price}</span>
+    <button class="btn btn-dark filter-btn" type="button" onclick="AddToCart(${item.proID})">Add To Cart</button>
+    </div>
+    </div>
            
         `
         ListData += FelterDataPuch;
@@ -123,15 +124,18 @@ function cartInLocal(){
 
 
 
-const box1 = document.querySelector('.box1'),
-box2 = document.querySelector('.box2'),
-MainDataCart = document.querySelector('.main-data-cart'),
-cardPictureTop = document.querySelectorAll('.card-picture-top'),
-cardImgTop = document.querySelectorAll('.card-img-top'),
-cardBody = document.querySelectorAll('.card-body')
-// console.log(cardPictureTop);
+const box1 = document.querySelector('.box1');
+const box2 = document.querySelector('.box2');
+const MainDataCart = document.querySelector('.main-data-cart');
+// const cardPictureTop = document.querySelectorAll('.style-card-top');
+// const cardImgTop = document.querySelectorAll('.card-img-top');
+// const cardBody = document.querySelectorAll('.card-body');
+
 
 box1.addEventListener('click', () => {
+    const cardPictureTop = document.querySelectorAll('.style-card-top');
+    const cardBody = document.querySelectorAll('.card-body');
+    console.log('cardPictureTop',cardPictureTop);
     box1.style.background = 'black';
     box2.style.background = 'none';
     MainDataCart.style.flexDirection = 'row';
@@ -147,17 +151,23 @@ box1.addEventListener('click', () => {
 
 
 
+
 box2.addEventListener('click', () => {
+    const cardPictureTop = document.querySelectorAll('.style-card-top');
+    const cardImgTop = document.querySelectorAll('.card-img-top');
+    const cardBody = document.querySelectorAll('.card-body');
     box2.style.background = 'black';
     box1.style.background = 'none';
     cardImgTop.forEach((item)=>{
         item.style.width = '250px'
+        item.style.display = 'flex';
     })
     MainDataCart.style.flexDirection = 'column';
     MainDataCart.style.width = '100%';
     cardPictureTop.forEach((items)=>{
         items.style.width = '100%';
         items.style.display = 'flex';
+        console.log(items);
     })
     cardBody.forEach((items)=>{
         items.style.marginTop = '100px';
@@ -195,6 +205,7 @@ let categName = '';
 function DisplayCategorie (){
     svgs.style.display = 'none';
     ShowingImg.style.display = 'none';
+    dataimg.style.display = 'block';
     saveValue()
     
 }
@@ -205,16 +216,17 @@ function DisplayImg (){
     
 }
 
-let cart = JSON.parse(localStorage.getItem('MiPakistan')) || [];
+let cart1 = JSON.parse(localStorage.getItem('MiPakistan')) || [];
 function saveValue() {
     let searchValue = document.getElementById("Search-product").value.toUpperCase();
-    let searchingProduct = cart.filter(x => x.productName.toUpperCase().includes(searchValue));
+    let searchingProduct = cart1.filter(x => x.productName.toUpperCase().includes(searchValue));
+    // console.log('searchingProduct',searchingProduct);
     searchingProduct.forEach((item)=>{
         let productNamesCategorie = 
         `
         <div class="container">
         <div class="row">
-            <a href="/next.html?category=${item.cateory}" class="product-name-style">${item.productName}</a>
+            <a href="/Charger.html?ProductID=${item.proID}" class="product-name-style">${item.productName}</a>
             <hr>
         </div>
         </div>
@@ -230,6 +242,9 @@ function DisplayAudio(){
     let ischecked = event.target.checked;
     console.log(ischecked);
     if (ischecked === true){
+        let cb4 = document.getElementById('cb4');
+        cb4.checked = false;
+        
         let ProductType = JSON.parse(localStorage.getItem('MiPakistan')) || [],
         results =  ProductType.filter(x => x.cateory === 'Audio'),
         innerAudio = '';
@@ -238,16 +253,17 @@ function DisplayAudio(){
             let audio = 
             `
              <div class="card-picture-top" style="width: 18rem ">
-                    <img src="${itemsValue.img}" class="card-img-top " alt="...">
+                <a href="Charger.html?ProductID=${itemsValue.proID}"><img src="${itemsValue.img}" class="card-img-top " alt="..."></a>
                     <div class="card-body">
-                     <button class="btn btn-dark filter-btn" type="button" onclick="AddToCart(7)">Add To Cart</button>
-                        <p class="card-text">${itemsValue.productName} ....</p>
-                        <span class="card-prices">Rs.${itemsValue.price}</span>
+                    <p class="card-text">${itemsValue.productName} ....</p>
+                    <span class="card-prices">Rs.${itemsValue.price}</span>
+                    <button class="btn btn-dark filter-btn" type="button" onclick="AddToCart(${itemsValue.proID})">Add To Cart</button>
                     </div>
-                </div>
+                    </div>
             `
             innerAudio += audio;
         })
+        
         CardAudioEnter.innerHTML = innerAudio;  
     }
     else
@@ -260,6 +276,8 @@ function DisplayAudio(){
 function DisplayPhone(){
     let ischecked = event.target.checked;
     if(ischecked === true){
+        let cb2 = document.getElementById('cb2');
+        cb2.checked = false;
         let ProductType = JSON.parse(localStorage.getItem('MiPakistan')) || [],
         results =  ProductType.filter(x => x.cateory === 'Smartphones'),
         innerAudio = '';
@@ -268,11 +286,11 @@ function DisplayPhone(){
             let audio = 
             `
              <div class="card-picture-top" style="width: 18rem ">
-                    <img src="${itemsValue.img}" class="card-img-top " alt="...">
+              <a href="Charger.html?ProductID=${itemsValue.proID}"><img src="${itemsValue.img}" class="card-img-top " alt="..."></a>
                     <div class="card-body">
-                     <button class="btn btn-dark filter-btn" type="button" onclick="AddToCart(7)">Add To Cart</button>
-                        <p class="card-text">${itemsValue.productName} ....</p>
-                        <span class="card-prices">Rs.${itemsValue.price}</span>
+                    <p class="card-text">${itemsValue.productName} ....</p>
+                    <span class="card-prices">Rs.${itemsValue.price}</span>
+                    <button class="btn btn-dark filter-btn" type="button" onclick="AddToCart(${itemsValue.proID})">Add To Cart</button>
                     </div>
                 </div>
             `
@@ -286,51 +304,26 @@ function DisplayPhone(){
     }
     }
     
-function Displayeco(){
-    let ischecked = event.target.checked;
-    if(ischecked == true){
-        let ProductType = JSON.parse(localStorage.getItem('MiPakistan')) || [],
-        results =  ProductType.filter(x => x.cateory === 'Power Bank'),
-        innerAudio = '';
-        CardAudioEnter = document.querySelector('.main-data-cart');
-        results.forEach((itemsValue)=>{
-            let audio = 
-            `
-             <div class="card-picture-top" style="width: 18rem ">
-                    <img src="${itemsValue.img}" class="card-img-top " alt="...">
-                    <div class="card-body">
-                     <button class="btn btn-dark filter-btn" type="button" onclick="AddToCart(7)">Add To Cart</button>
-                        <p class="card-text">${itemsValue.productName} ....</p>
-                        <span class="card-prices">Rs.${itemsValue.price}</span>
-                    </div>
-                </div>
-            `
-            innerAudio += audio;
-        })
-        CardAudioEnter.innerHTML = innerAudio;  
-    
-    }
-    else{
-        cartInLocal()
-    }
-    }
+
     
 function DisplayInStock(event){
     let ischecked = event.target.checked;
     if(ischecked === true){
+        let cb2 = document.getElementById('cb2' , 'cb4');
+        cb2.checked = false;
         let ProductType = JSON.parse(localStorage.getItem('MiPakistan')) || [],
-        results =  ProductType.filter(x => x.proID > 29),
+        results =  ProductType.filter(x => x.InStock > 0),
         innerAudio = '';
         CardAudioEnter = document.querySelector('.main-data-cart');
         results.forEach((itemsValue)=>{
             let audio = 
             `
              <div class="card-picture-top" style="width: 18rem ">
-                    <img src="${itemsValue.img}" class="card-img-top " alt="...">
+                <a href="Charger.html?ProductID=${itemsValue.proID}"><img src="${itemsValue.img}" class="card-img-top " alt="..."></a>
                     <div class="card-body">
-                     <button class="btn btn-dark filter-btn" type="button" onclick="AddToCart(7)">Add To Cart</button>
-                        <p class="card-text">${itemsValue.productName} ....</p>
-                        <span class="card-prices">Rs.${itemsValue.price}</span>
+                    <p class="card-text">${itemsValue.productName} ....</p>
+                    <span class="card-prices">Rs.${itemsValue.price}</span>
+                    <button class="btn btn-dark filter-btn" type="button" onclick="AddToCart(${itemsValue.proID})">Add To Cart</button>
                     </div>
                 </div>
             `
@@ -344,15 +337,6 @@ function DisplayInStock(event){
         cartInLocal()
     }
 }
+
+
 cartInLocal()
-
-
-//  function DisplayCategoriesProduct(){
-//     let ProductType = JSON.parse(localStorage.getItem('MiPakistan')) || [];
-//     let results =  ProductType.filter(x => x.productName === );
-    
-//     console.log(results);
-//  }
-
-//  DisplayCategoriesProduct()
-
